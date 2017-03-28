@@ -19,9 +19,6 @@ var device = require('express-device');
 require('./routes/func');
 
 //module setting
-var db = require('./mongo');
-var passport = require('./passport')(db.Users);
-
 
 //set engin
 app.set('views', path.join(__dirname, 'views'));
@@ -41,7 +38,7 @@ app.use(device.capture());
 app.use(CORS);
 
 //router setting
-var index = require('./routes/index')(router, db.Apply);
+var index = require('./routes/index')(router);
 var kakao = require('./routes/kakao')(router);
 
 //router setting
