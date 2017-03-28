@@ -31,8 +31,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({limit: '1gb', extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(passport.initialize());
-app.use(passport.session());
 app.use(session({secret: "sexonthebeach",  resave: false ,saveUninitialized: true, maxAge: 60*10000 }));
 app.use(device.capture());
 app.use(CORS);
