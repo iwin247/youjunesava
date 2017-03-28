@@ -47,7 +47,7 @@ app.use('/kakao', kakao);
 app.on('error', onError);
 app.on('listening', onListening);
 
-app.listen(80);
+app.listen(3000);
 
 //error handle
 function normalizePort(val) {
