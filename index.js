@@ -10,7 +10,6 @@ var randomstring = require('randomstring');
 var app = express();
 var debug = require('debug')('dicon:server');
 var rndString = require("randomstring");
-var session = require('express-session');
 var fs = require('fs');
 var router = express.Router();
 var async = require('async');
@@ -31,7 +30,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({limit: '1gb', extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({secret: "sexonthebeach",  resave: false ,saveUninitialized: true, maxAge: 60*10000 }));
 app.use(device.capture());
 app.use(CORS);
 
